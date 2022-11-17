@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodStore - Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/data-tables/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/data-tables/bootstrap.min.css">
+    <style>
+        .navbar-collapse {
+            margin-left: 43%;
+        }
+
+        .card {
+            margin: auto;
+            width: 600px;
+            max-width: 600px;
+            border-radius: 20px
+        }
+
+        .mt-50 {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #orderno {
+            padding: 2vh 2vh 0;
+            font-size: 18px
+        }
+
+        .title {
+            display: flex;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 12%
+        }
+
+        .main {
+            padding: 0 2rem
+        }
+
+        .main img {
+            border-radius: 7px
+        }
+
+        .row-main {
+            padding: 1.5vh 0;
+            align-items: center
+        }
+
+        hr {
+            margin: 1rem -1vh;
+            border-top: 1px solid rgb(214, 214, 214)
+        }
+
+        .total {
+            font-size: 1rem
+        }
+
+        .btn {
+            background-color: #25BF55;
+            border-color: #25BF55;
+            color: white;
+            border-radius: 7px;
+            margin-bottom: 20px;
+            width: 30%;
+            font-size: 0.8rem;
+            padding: 0.8rem;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #25BF55;
+            border-color: #25BF55;
+            color: #000;
+        }
+
+        /* Track Proses Order */
+        .track {
+            position: relative;
+            background-color: #ddd;
+            height: 7px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 100px;
+            margin-top: 50px
+        }
+
+        .track .step {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            width: 25%;
+            margin-top: -18px;
+            text-align: center;
+            position: relative
+        }
+
+        .track .step.active:before {
+            background: #25BF55
+        }
+
+        .track .step::before {
+            height: 7px;
+            position: absolute;
+            content: "";
+            width: 100%;
+            left: 0;
+            top: 18px
+        }
+
+        .track .step.active .icon {
+            background: #F34444;
+            color: #fff
+        }
+
+        .track .icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 40px;
+            position: relative;
+            border-radius: 100%;
+            background: #ddd
+        }
+
+        .track .step.active .text {
+            font-weight: bold;
+            color: #000
+        }
+
+        .track .text {
+            display: block;
+            margin-top: 7px
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Mid elements -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+                    <b>Food</b>Store
+                </a>
+            </div>
+            <!-- Right elements -->
+            <div class="d-flex align-items-center">
+                <!-- Icon -->
+                <a class="text-reset me-3" href="halaman_pesan.html">
+                    <img src="assets/img/shopping-cart.png" alt="" class="icon-size">
+                </a>
+                <!-- Avatar -->
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/user.png" class="rounded-circle" height="25" alt="Default" loading="lazy" />
+                    <span class="nama-user">Ramandhika Ilham</span>
+                </div>
+            </div>
+            <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+    <div class="card mt-50 mb-50">
+        <div class="col d-flex"><img src="assets/img/back.png" alt="" class="icon-back">
+            <span class="card-title" id="orderno">Pembayaran</span></div>
+        <hr>
+        <div class="main">
+            <div class="track">
+                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span
+                        class="text">Menunggu Pembayaran</span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">
+                        Antri</span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> Pesanan
+                        Diproses </span> </div>
+                <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Pesan
+                        Disajikan</span> </div>
+            </div>
+            <hr>
+            <div class="card-category">
+                Tagihan Pembayaran
+            </div><br>
+            <span>
+                <b>Kode Pesanan :</b> TRX100 <br>
+                <b>Nomer Meja :</b> 14 <br>
+                <b>Nama Customer :</b> Ramandhika Ilham Pratama
+            </span><br>
+            <hr>
+            <table id="example" class="table table-striped" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Qty</th>
+                        <th>Nama Makanan</th>
+                        <th>Harga</th>
+                        <th>Diskon</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Gulai Patin</td>
+                        <td>Rp 56.000</td>
+                        <td>Rp 0</td>
+                        <td>Rp 56.000</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Swedish Meatball</td>
+                        <td>Rp 60.000</td>
+                        <td>Rp 0</td>
+                        <td>Rp 60.000</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Jelly Coffe</td>
+                        <td>Rp 45.000</td>
+                        <td>Rp 0</td>
+                        <td>Rp 60.000</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th>Total Pembayaran</th>
+                        <th class="card-category">Rp 161.000</th>
+                    </tr>
+
+                </tfoot>
+            </table>
+            <div class="total">
+                <div class="row">
+                    <div class="col d-flex justify-content-end"><button class="btn"><a
+                                href="halaman_pembayaran.html">BAYAR</a></button></div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="assets/data-tables/jquery-3.5.1.js"></script>
+<script src="assets/data-tables/jquery.dataTables.min.js"></script>
+<script src="assets/data-tables/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+<script src="https://kit.fontawesome.com/984a8c9bbd.js" crossorigin="anonymous"></script>

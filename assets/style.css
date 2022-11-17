@@ -15,6 +15,12 @@
     height: 18px;
 }
 
+.icon-back {
+    width: 32px;
+    height: 32px;
+    margin: 10px 0px 0px 15px;
+}
+
 .margin-lr {
     width: 65%;
     margin-right: 60px;
@@ -22,6 +28,15 @@
 
 p {
     font-size: 14px;
+}
+
+button a {
+    color: white; 
+    text-decoration:none;
+}
+
+button a:hover {
+    color: black;
 }
 
 .p-15 {
