@@ -81,66 +81,6 @@
             border-color: #25BF55;
             color: #000;
         }
-
-        /* Track Proses Order */
-        .track {
-            position: relative;
-            background-color: #ddd;
-            height: 7px;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            margin-bottom: 100px;
-            margin-top: 50px
-        }
-
-        .track .step {
-            -webkit-box-flex: 1;
-            -ms-flex-positive: 1;
-            flex-grow: 1;
-            width: 25%;
-            margin-top: -18px;
-            text-align: center;
-            position: relative
-        }
-
-        .track .step.active:before {
-            background: #25BF55
-        }
-
-        .track .step::before {
-            height: 7px;
-            position: absolute;
-            content: "";
-            width: 100%;
-            left: 0;
-            top: 18px
-        }
-
-        .track .step.active .icon {
-            background: #F34444;
-            color: #fff
-        }
-
-        .track .icon {
-            display: inline-block;
-            width: 35px;
-            height: 35px;
-            line-height: 40px;
-            position: relative;
-            border-radius: 100%;
-            background: #ddd
-        }
-
-        .track .step.active .text {
-            font-weight: bold;
-            color: #000
-        }
-
-        .track .text {
-            display: block;
-            margin-top: 7px
-        }
     </style>
 
 </head>
@@ -172,7 +112,7 @@
                 <!-- Avatar -->
                 <div class="d-flex align-items-center">
                     <img src="assets/img/user.png" class="rounded-circle" height="25" alt="Default" loading="lazy" />
-                    <span class="nama-user">Ramandhika Ilham</span>
+                    <span class="nama-user">Pelayan</span>
                 </div>
             </div>
             <!-- Right elements -->
@@ -181,23 +121,12 @@
     </nav>
     <!-- Navbar -->
     <div class="card mt-50 mb-50">
-        <div class="col d-flex"><img src="assets/img/back.png" alt="" class="icon-back">
-            <span class="card-title" id="orderno">Pembayaran</span></div>
+        <div class="col d-flex"><a href="index_dapur.html"><img src="assets/img/back.png" alt="" class="icon-back"></a>
+            <span class="card-title" id="orderno">Informasi Pemesanan</span></div>
         <hr>
         <div class="main">
-            <div class="track">
-                <div class="step active"> <span class="icon"> <i class="fa fa-check"></i> </span> <span
-                        class="text">Menunggu Pembayaran</span> </div>
-                <div class="step"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">
-                        Antri</span> </div>
-                <div class="step"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text"> Pesanan
-                        Diproses </span> </div>
-                <div class="step"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Pesan
-                        Disajikan</span> </div>
-            </div>
-            <hr>
             <div class="card-category">
-                Tagihan Pembayaran
+                Informasi Pemesanan
             </div><br>
             <span>
                 <b>Kode Pesanan :</b> TRX100 <br>
@@ -205,11 +134,12 @@
                 <b>Nama Customer :</b> Ramandhika Ilham Pratama
             </span><br>
             <hr>
-            <table id="example" class="table table-striped" style="width:100%">
+            <table id="example" class="table table-striped" style="width:100%; font-size: 14px;">
                 <thead>
                     <tr>
                         <th>Qty</th>
                         <th>Nama Makanan</th>
+                        <th>Stock</th>
                         <th>Harga</th>
                         <th>Diskon</th>
                         <th>Subtotal</th>
@@ -219,6 +149,7 @@
                     <tr>
                         <td>1</td>
                         <td>Gulai Patin</td>
+                        <td>Tersedia</td>
                         <td>Rp 56.000</td>
                         <td>Rp 0</td>
                         <td>Rp 56.000</td>
@@ -226,6 +157,7 @@
                     <tr>
                         <td>1</td>
                         <td>Swedish Meatball</td>
+                        <td>Tersedia</td>
                         <td>Rp 60.000</td>
                         <td>Rp 0</td>
                         <td>Rp 60.000</td>
@@ -233,6 +165,7 @@
                     <tr>
                         <td>1</td>
                         <td>Jelly Coffe</td>
+                        <td>Tersedia</td>
                         <td>Rp 45.000</td>
                         <td>Rp 0</td>
                         <td>Rp 60.000</td>
@@ -240,6 +173,7 @@
                 </tbody>
                 <tfoot>
                     <tr>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -252,7 +186,7 @@
             <div class="total">
                 <div class="row">
                     <div class="col d-flex justify-content-end"><button class="btn"><a
-                                href="halaman_pembayaran.html">BAYAR</a></button></div>
+                                href="halaman_pembayaran.html">Diproses & Siap disajikan</a></button></div>
                 </div>
             </div>
             <hr>
