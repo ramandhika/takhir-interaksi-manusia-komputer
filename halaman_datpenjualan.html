@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Manager</title>
+    <link href="assets/boostrap/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/data-tables/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="assets/data-tables/bootstrap.min.css">
+    <style>
+        .navbar-collapse {
+            margin-left: 43%;
+        }
+
+        .card {
+            margin: auto;
+            width: 800px;
+            max-width: 800px;
+            border-radius: 20px
+        }
+
+        .mt-50 {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        #orderno {
+            padding: 2vh 5vh 0;
+            font-size: 18px
+        }
+
+        .title {
+            display: flex;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            padding: 12%
+        }
+
+        .main {
+            padding: 0 2rem
+        }
+
+        .lunas {
+            color: #25BF55;
+        }
+
+        /* button */
+        .btn-error {
+            background-color: #F34444;
+            border-color: #F34444;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            width: 45%;
+            margin-left: 5px;
+        }
+
+        .btn-error:hover {
+            background-color: #F34444;
+            border-color: #F34444;
+        }
+
+        .btn-berhasil {
+            background-color: #25BF55;
+            border-color: #25BF55;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .btn-berhasil:hover {
+            background-color: #25BF55;
+            border-color: #25BF55;
+            color: black;
+        }
+
+        .btn-aktif {
+            background-color: #25BF55;
+            border-color: #25BF55;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 20px;
+            width: 10%;
+            line-height: 15px;
+            border-radius: 40px;
+        }
+
+        .btn-aktif:hover {
+            background-color: #25BF55;
+            border-color: #25BF55;
+            color: black;
+        }
+
+        .btn-outline-aktif {
+            border-color: #25BF55;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 20px;
+            width: 10%;
+            line-height: 15px;
+            border-radius: 40px;
+        }
+
+        .btn-outline-aktif:hover {
+            background-color: #25BF55;
+            border-color: #25BF55;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <!-- Mid elements -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Navbar brand -->
+                <a class="navbar-brand mt-2 mt-lg-0" href="index.html">
+                    <b>Food</b>Store
+                </a>
+            </div>
+            <!-- Right elements -->
+            <div class="d-flex align-items-center">
+                <!-- Icon -->
+                <a class="text-reset me-3" href="index_manager.html">
+                    <img src="assets/img/clipboard.png" alt="" class="icon-size">
+                </a>
+                <!-- Avatar -->
+                <div class="d-flex align-items-center">
+                    <img src="assets/img/user.png" class="rounded-circle" height="25" alt="Default" loading="lazy" />
+                    <span class="nama-user">Manager</span>
+                </div>
+            </div>
+            <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+
+    <!-- Container -->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <b style="font-size: 50px;">Manager Panel</b><br>
+                <div class="d-flex justify-content-center flex-wrap mt-4">
+                    <button onclick="location.href='index_manager.html'" class="btn btn-outline-aktif">Stock
+                        Barang</button>
+                    <button onclick="location.href='halaman_datpenjualan.html'" class="btn btn-aktif">Data
+                        Penjualan</button>
+                    <button onclick="location.href='halaman_lappenjualan.html'" class="btn btn-outline-aktif">Laporan
+                        Bulanan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Container -->
+    <div class="card mt-50 mb-50">
+        <div class="col d-flex">
+            <span class="card-title" id="orderno">Data Penjualan</span></div>
+        <hr>
+        <div class="main">
+            <div class="border border-2">
+                <table border="0" cellspacing="5" cellpadding="5">
+                    <tbody>
+                        <tr>
+                            <td>Minimum date:</td>
+                            <td><input type="text" id="min" name="min" placeholder="01-Oktober-2022"></td>
+                        </tr>
+                        <tr>
+                            <td>Maximum date:</td>
+                            <td><input type="text" id="max" name="max" placeholder="31-Oktober-2022"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="example" class="table table-striped text-center border" style="width:100%; font-size: 14px;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tanggal</th>
+                            <th>Metode Pembayaran</th>
+                            <th>Total</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>TRX100</td>
+                            <td>01-Oktober-2022</td>
+                            <td>CASH</td>
+                            <td>Rp 161.000</td>
+                            <td><span class="lunas">Lunas</span></td>
+                        </tr>
+                        <tr>
+                            <td>TRX101</td>
+                            <td>01-Oktober-2022</td>
+                            <td>DEBIT</td>
+                            <td>Rp 216.000</td>
+                            <td><span class="lunas">Lunas</span></td>
+                        </tr>
+                        <tr>
+                            <td>TRX102</td>
+                            <td>02-Oktober-2022</td>
+                            <td>CASH</td>
+                            <td>Rp 79.500</td>
+                            <td><span class="lunas">Lunas</span></td>
+                        </tr>
+                        <tr>
+                            <td>TRX103</td>
+                            <td>02-Oktober-2022</td>
+                            <td>QR Payment</td>
+                            <td>Rp 250.000</td>
+                            <td><span class="lunas">Lunas</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <hr>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="assets/data-tables/jquery-3.5.1.js"></script>
+<script src="assets/data-tables/jquery.dataTables.min.js"></script>
+<script src="assets/data-tables/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
+<script src="assets/boostrap/bootstrap.bundle.min.js"></script>
+<script src="assets/font-awesome/984a8c9bbd.js"></script>
