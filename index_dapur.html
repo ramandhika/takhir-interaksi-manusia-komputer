@@ -18,8 +18,8 @@
 
         .card {
             margin: auto;
-            width: 700px;
-            max-width: 700px;
+            width: 800px;
+            max-width: 800px;
             border-radius: 20px
         }
 
@@ -61,7 +61,6 @@
         .siap{
             color: #878787;
         }
-
     </style>
 
 </head>
@@ -87,8 +86,8 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Icon -->
-                <a class="text-reset me-3" href="halaman_pesan.html">
-                    <img src="assets/img/shopping-cart.png" alt="" class="icon-size">
+                <a class="text-reset me-3" href="index_dapur.html">
+                    <img src="assets/img/order-food.png" alt="" class="icon-size">
                 </a>
                 <!-- Avatar -->
                 <div class="d-flex align-items-center">
@@ -106,10 +105,11 @@
             <span class="card-title" id="orderno">Daftar Pesanan</span></div>
         <hr>
         <div class="main">
-            <div class="card-category">
+            <div class="card-category" style="margin-left: 5px; margin-bottom: 5px">
                 Semua Pesanan
-            </div><br>
-            <table id="example" class="table table-striped text-center" style="width:100%; font-size: 14px;">
+            </div>
+            <div class="border border-2">
+            <table id="example" class="table table-striped text-center border" style="width:100%; font-size: 14px;">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -155,6 +155,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
             <hr>
         </div>
     </div>

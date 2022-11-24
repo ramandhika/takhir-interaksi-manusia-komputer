@@ -29,7 +29,7 @@
         }
 
         #orderno {
-            padding: 2vh 2vh 0;
+            padding: 2vh 5vh 0;
             font-size: 18px
         }
 
@@ -63,7 +63,7 @@
             font-size: 1rem
         }
 
-        .btn {
+        .b-btn {
             background-color: #25BF55;
             border-color: #25BF55;
             color: white;
@@ -76,10 +76,116 @@
             font-weight: bold;
         }
 
-        .btn:hover {
+        .b-btn:hover {
             background-color: #25BF55;
             border-color: #25BF55;
             color: #000;
+        }
+
+        .list-meja {
+            margin-left: 3px;
+        }
+
+        #list-meja {
+            margin-left: 5%;
+        }
+
+        .nomor-meja {
+            width: 50px;
+            border-color: #25BF55;
+            color: black;
+            font-weight: bold;
+            margin-right: 12.5px;
+        }
+
+        .nomor-meja:hover {
+            background-color: #25BF55;
+            border-color: #25BF55;
+        }
+
+        .nomor-meja.active {
+            background-color: #25BF55;
+            border-color: #25BF55;
+        }
+
+        .arr {
+            color: #25BF55;
+            width: 28px;
+            margin-top: 5px;
+        }
+
+        .stats {
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 35%;
+        }
+
+        /* Track Proses Order */
+        .track {
+            position: relative;
+            background-color: #ddd;
+            height: 7px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-bottom: 100px;
+            margin-top: 50px
+        }
+
+        .track .step {
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            width: 25%;
+            margin-top: -18px;
+            text-align: center;
+            position: relative
+        }
+
+        .track .step.active:before {
+            background: #25BF55
+        }
+
+        .track .step.tactive:before {
+            background: #25BF55
+        }
+
+        .track .step::before {
+            height: 7px;
+            position: absolute;
+            content: "";
+            width: 100%;
+            left: 0;
+            top: 18px
+        }
+
+        .track .step.active .icon {
+            background: #F34444;
+            color: #fff
+        }
+
+        .track .step.tactive .icon {
+            color: #000
+        }
+
+        .track .icon {
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            line-height: 40px;
+            position: relative;
+            border-radius: 100%;
+            background: #ddd
+        }
+
+        .track .step.active .text {
+            font-weight: bold;
+            color: #000
+        }
+
+        .track .text {
+            display: block;
+            margin-top: 7px
         }
     </style>
 
@@ -106,7 +212,7 @@
             <!-- Right elements -->
             <div class="d-flex align-items-center">
                 <!-- Icon -->
-                <a class="text-reset me-3" href="index_dapur.html">
+                <a class="text-reset me-3" href="index_service.html">
                     <img src="assets/img/order-food.png" alt="" class="icon-size">
                 </a>
                 <!-- Avatar -->
@@ -121,12 +227,43 @@
     </nav>
     <!-- Navbar -->
     <div class="card mt-50 mb-50">
-        <div class="col d-flex"><a href="index_dapur.html"><img src="assets/img/back.png" alt="" class="icon-back"></a>
+        <div class="col d-flex">
             <span class="card-title" id="orderno">Informasi Pemesanan</span></div>
         <hr>
         <div class="main">
+            <div class="list-meja">
+                <div class="card-category">Daftar Meja</div>
+                <div class="card-title">Pilih Meja</div><br>
+                <div class="d-flex align-content-stretch flex-wrap" id="list-meja">
+                    <span class="arr"><i class="fa-solid fa-chevron-left"></i></span>
+                    <button type="button" class="btn btn-outline-success nomor-meja">10</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">11</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">12</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">13</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja active">14</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">15</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">16</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">17</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">18</button>
+                    <button type="button" class="btn btn-outline-success nomor-meja">19</button>
+                    <span class="arr"><i class="fa-solid fa-chevron-right"></i></span>
+                </div>
+            </div><hr>
+            <span class="stats">Status Pesanan</span>
+            <div class="track">
+                <div class="step tactive"> <span class="icon"> <i class="fa fa-check"></i> </span> <span
+                        class="text">Menunggu Pembayaran</span> </div>
+                <div class="step tactive"> <span class="icon"> <i class="fa fa-user"></i> </span> <span class="text">
+                        Antri</span> </div>
+                <div class="step tactive"> <span class="icon"> <i class="fa fa-truck"></i> </span> <span class="text">
+                        Pesanan
+                        Diproses </span> </div>
+                <div class="step active"> <span class="icon"> <i class="fa fa-box"></i> </span> <span class="text">Pesan
+                        Disajikan</span> </div>
+            </div>
+            <hr>
             <div class="card-category">
-                Informasi Pemesanan
+                Tagihan Pembayaran
             </div><br>
             <span>
                 <b>Kode Pesanan :</b> TRX100 <br>
@@ -135,62 +272,47 @@
             </span><br>
             <hr>
             <div class="border border-2">
-                <div class="card-category" style="margin-left: 5px;">
+                <div class="card-category">
                     Detail Pesanan
                 </div>
-                <table id="example" class="table table-striped border" style="width:100%; font-size: 14px;">
+                <table id="example" class="table table-striped border" style="width:100%">
                     <thead>
                         <tr>
                             <th>Qty</th>
                             <th>Nama Makanan</th>
-                            <th>Stock</th>
-                            <th>Harga</th>
-                            <th>Diskon</th>
-                            <th>Subtotal</th>
+                            <th></th>
+                            <th></th>
+                            <th>Status Barang</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
                             <td>Gulai Patin</td>
-                            <td>Tersedia</td>
-                            <td>Rp 56.000</td>
-                            <td>Rp 0</td>
-                            <td>Rp 56.000</td>
+                            <td></td>
+                            <td></td>
+                            <td>Siap Diantar</td>
                         </tr>
                         <tr>
                             <td>1</td>
                             <td>Swedish Meatball</td>
-                            <td>Tersedia</td>
-                            <td>Rp 60.000</td>
-                            <td>Rp 0</td>
-                            <td>Rp 60.000</td>
+                            <td></td>
+                            <td></td>
+                            <td>Siap Diantar</td>
                         </tr>
                         <tr>
                             <td>1</td>
                             <td>Jelly Coffe</td>
-                            <td>Tersedia</td>
-                            <td>Rp 45.000</td>
-                            <td>Rp 0</td>
-                            <td>Rp 45.000</td>
+                            <td></td>
+                            <td></td>
+                            <td>Siap Diantar</td>
                         </tr>
                     </tbody>
-                    <tfoot>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>Total Pembayaran</th>
-                            <th class="card-category">Rp 161.000</th>
-                        </tr>
-                    </tfoot>
                 </table>
-
                 <div class="total">
                     <div class="row">
-                        <div class="col d-flex justify-content-end"><button class="btn"><a href="">Diproses &<br>Siap
-                                    disajikan</a></button></div>
+                        <div class="col d-flex justify-content-end"><button class="btn b-btn"><a
+                                    href="halaman_pembayaran.html">Sudah Diantar</a></button></div>
                     </div>
                 </div>
             </div>
